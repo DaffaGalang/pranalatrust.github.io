@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranala Trust Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.ico">
+
+    <style>
+        /* Gaya tambahan untuk dark mode pada section prioritas */
+        .dark .bg-gray-50 {
+            background-color: #1a202c;
+            /* Menggunakan warna dark mode yang konsisten */
+        }
+
+        .dark .bg-white {
+            background-color: #1a202c;
+        }
+
+        .dark .text-gray-800 {
+            color: #e2e8f0;
+        }
+
+        .dark .text-gray-600 {
+            color: #a0aec0;
+        }
+
+        .dark .text-gray-300 {
+            color: #a0aec0;
+        }
+
+        .dark .group-hover\:text-blue-500:hover {
+            color: #63b3ed;
+        }
+
+        .dark .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .bg-gray-900 {
+            background-color: #1a202c;
+        }
+
+        /* Perbaikan khusus untuk menghilangkan gap dan memastikan tampilan responsif */
+        body,
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container,
+        .max-w-7xl,
+        .max-w-6xl {
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 640px) {
+            .sm\:px-6 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Tambahan CSS untuk animasi dan perbaikan menu */
+        .mobile-menu-active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+
+        .mobile-menu-inactive {
+            animation: fadeOut 0.3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Perbaikan untuk teks "Tentang Kami" pada tampilan mobile */
+        @media (max-width: 767px) {
+            #tentang .text-justify p {
+                font-size: 1rem;
+                /* Mengurangi ukuran font untuk mobile */
+                line-height: 1.6;
+                /* Menambahkan spasi antar baris */
+                padding: 0 0.5rem;
+                /* Menambah padding horizontal agar tidak terlalu mepet */
+                text-align: left;
+                /* Teks lebih mudah dibaca jika rata kiri */
+            }
+        }
+
+        /* Menambahkan transisi pada ikon hamburger */
+        #mobileMenuButton svg {
+            transition: stroke 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="font-['Roboto'] bg-white text-gray-800">
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" id="sitename" class="text-3xl font-bold text-gray-800 transition-colors duration-300">
+                Pranala Trust Media
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-6 text-base font-medium">
+                <a href="#home" class="nav-link text-gray-800 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="#tentang" class="nav-link text-gray-800 hover:text-blue-600 transition duration-300">Tentang
+                    Kami</a>
+                <a href="#services" class="nav-link text-gray-800 hover:text-blue-600 transition duration-300">Pelayanan</a>
+                <a href="#portfolio" class="nav-link text-gray-800 hover:text-blue-600 transition duration-300">Portfolio</a>
+                <a href="#contact" class="nav-link text-gray-800 hover:text-blue-600 transition duration-300">Contact</a>
+                <a href="https://wa.me/6282346579034" target="_blank"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-lg transition duration-300">
+                    Konsultasi Gratis
+                </a>
+            </nav>
+
+            <button id="mobileMenuButton" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden py-4 px-4 shadow-md w-full bg-white transition-colors duration-300">
+            <a href="#home" class="mobile-link block px-4 py-2 rounded transition duration-300 text-gray-800 hover-mobile-light">Home</a>
+            <a href="#tentang" class="mobile-link block px-4 py-2 rounded transition duration-300 text-gray-800 hover-mobile-light">Tentang Kami</a>
+            <a href="#services" class="mobile-link block px-4 py-2 rounded transition duration-300 text-gray-800 hover-mobile-light">Pelayanan</a>
+            <a href="#portfolio" class="mobile-link block px-4 py-2 rounded transition duration-300 text-gray-800 hover-mobile-light">Portfolio</a>
+            <a href="#contact" class="mobile-link block px-4 py-2 rounded transition duration-300 text-gray-800 hover-mobile-light">Contact</a>
+            <a href="https://wa.me/6282346579034" target="_blank"
+                class="block px-4 py-2 mt-2 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition duration-300">
+                Konsultasi Gratis
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="bg-white pt-32 pb-24 md:pt-48 md:pb-36" data-aos="fade-up" data-aos-delay="250">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center px-4 md:px-6">
+
+            <div class="text-left pr-4 md:pr-14">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
+                    Membangun Koneksi<br />
+                    Menciptakan Inovasi
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base mb-6 md:mb-8 leading-relaxed text-justify max-w-xl">
+                    Kami percaya bahwa setiap solusi hebat berawal dari koneksi yang kuat antara ide, teknologi, dan
+                    kebutuhan klien. Pranala Trust Media hadir untuk memberikan layanan digital yang membantu perkembangan bisnis
+                    lebih cepat, efisien, dan lebih profesional.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="#tentang"
+                        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Siapa Kami?
+                    </a>
+                    <a href="#portfolio"
+                        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Portofolio Kami
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <img src="assets/img/utama.jpg" alt="Ilustrasi Home" class="w-full h-auto rounded-xl shadow-md" />
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Memastikan halaman selalu dimulai dari atas saat di-refresh
+        window.onload = function () {
+            // window.scrollTo(0, 0);
+        };
+        const header = document.getElementById('header');
+        const sitename = document.getElementById('sitename');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('svg');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isMenuOpen = mobileMenu.classList.contains('mobile-menu-active');
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('mobile-menu-active');
+                mobileMenu.classList.add('mobile-menu-inactive');
+                // Setelah animasi fadeOut selesai, sembunyikan menu
+                mobileMenu.addEventListener('animationend', () => {
+                    mobileMenu.classList.remove('mobile-menu-inactive');
+                    mobileMenu.classList.add('hidden');
+                }, {
+                    once: true
+                });
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.remove('mobile-menu-inactive');
+                mobileMenu.classList.add('mobile-menu-active');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900', 'shadow-lg');
+                sitename.classList.replace('text-gray-800', 'text-white');
+
+                navLinks.forEach(link => {
+                    link.classList.replace('text-gray-800', 'text-white');
+                });
+
+                mobileMenuIcon.setAttribute('stroke', 'white');
+                mobileMenu.classList.add('bg-gray-900');
+                mobileMenu.classList.remove('bg-white');
+
+                mobileLinks.forEach(link => {
+                    link.classList.remove('text-gray-800');
+                    link.classList.add('text-white');
+                    link.classList.remove('hover-mobile-light');
+                    link.classList.add('hover-mobile-dark');
+                });
+            } else {
+                header.classList.remove('bg-gray-900', 'shadow-lg');
+                sitename.classList.replace('text-white', 'text-gray-800');
+
+                navLinks.forEach(link => {
+                    link.classList.replace('text-white', 'text-gray-800');
+                });
+
+                mobileMenuIcon.setAttribute('stroke', 'currentColor');
+                mobileMenu.classList.remove('bg-gray-900');
+                mobileMenu.classList.add('bg-white');
+
+                mobileLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-800');
+                    link.classList.remove('hover-mobile-dark');
+                    link.classList.add('hover-mobile-light');
+                });
+            }
+        });
+
+        // Bagian baru untuk smooth scrolling
+        const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                // Pastikan hanya tautan ke ID yang ada di halaman ini yang di-smooth scroll
+                if (this.getAttribute('href').length > 1) {
+                    event.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+
+                    // Tambahan untuk menu mobile, tutup menu setelah diklik
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('mobile-menu-active');
+                        mobileMenu.classList.add('mobile-menu-inactive');
+                        mobileMenu.addEventListener('animationend', () => {
+                            mobileMenu.classList.remove('mobile-menu-inactive');
+                            mobileMenu.classList.add('hidden');
+                        }, {
+                            once: true
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Alasan Memilih Kami -->
+    <section id="prioritas" class="py-16 bg-gray-50 dark:bg-gray-900" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">
+                Alasan Utama Klien Mempercayai Kami
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transform transition duration-500 hover:-translate-y-2 hover:shadow-lg flex flex-col items-center text-center"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-500 mb-4 text-5xl">
+                        <i class="fi fi-sr-following"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-blue-500 transition-colors duration-300 mb-2">
+                        Prioritas Kepuasan Pelanggan
+                    </h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Kami selalu mengutamakan kepuasan setiap klien dengan memberikan solusi yang tepat, layanan
+                        responsif, dan hasil yang sesuai ekspektasi.
+                    </p>
+                </div>
+
+                <div class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col items-center text-center"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <div class="text-blue-500 mb-4 text-5xl">
+                        <i class="fi fi-sr-rocket-lunch"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-blue-500 transition-colors duration-300 mb-2">
+                        Penggunaan Teknologi Terbaru
+                    </h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Kami memanfaatkan teknologi terkini untuk menghadirkan solusi digital yang modern, aman, dan
+                        efisien di semua lini layanan.
+                    </p>
+                </div>
+
+                <div class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col items-center text-center"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <div class="text-blue-500 mb-4 text-5xl">
+                        <i class="fi fi-sr-chat-arrow-grow"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-blue-500 transition-colors duration-300 mb-2">
+                        Skalabilitas dan Fleksibilitas
+                    </h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Tidak hanya berfungsi hari ini, layanan kami siap mengikuti pertumbuhan bisnis Anda dan dapat
+                        dengan mudah disesuaikan dengan kebutuhan di masa mendatang.
+                    </p>
+                </div>
+
+                <div class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col items-center text-center"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-blue-500 mb-4 text-5xl">
+                        <i class="fi fi-sr-headset"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-blue-500 transition-colors duration-300 mb-2">
+                        Pendampingan dan Konsultasi Gratis
+                    </h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Kami memberikan layanan pendampingan dan konsultasi, serta dukungan teknis berkelanjutan agar
+                        anda merasa aman dan nyaman dalam menggunakan layanan kami.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-16 md:py-20 bg-white text-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative text-center mb-14" data-aos="fade-up">
+                <div class="relative w-full text-center">
+                    <h2 class="absolute left-1/2 -translate-x-1/2 text-[45px] md:text-[48px] font-extrabold text-gray-400 opacity-10 uppercase tracking-wider pointer-events-none select-none whitespace-nowrap"
+                        style="top: 3%;">
+                        WHO WE ARE?
+                    </h2>
+                    <h2 class="relative text-3xl md:text-4xl font-bold text-gray-800 z-10 pt-12">
+                        TENTANG KAMI
+                    </h2>
+                </div>
+                <p class="relative mt-6 text-gray-600 max-w-2xl mx-auto text-lg md:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                    Kami hadir untuk memberikan solusi digital yang sistematis dan sesuai kebutuhan
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center mt-14">
+                <div class="flex justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <video muted autoplay loop playsinline class="rounded-2xl shadow-lg w-full h-auto">
+                        <source src="assets/img/vd.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung tag video.
+                    </video>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-blue-700 mb-6">
+                        Pranala Trust Media itu apa sih?
+                    </h3>
+                    <div class="space-y-4 text-justify text-gray-700 leading-relaxed text-lg md:text-base">
+                        <p>
+                            PT Pranala Trust Media adalah perusahaan yang berdiri sejak Agustus 2024 dan bergerak di
+                            bidang pengembangan website, aplikasi mobile, serta pengolahan data.
+                        </p>
+                        <p>
+                            Kami hadir untuk membantu individu, bisnis, dan institusi menghadirkan solusi digital yang
+                            efisien, fungsional, dan sesuai kebutuhan.
+                        </p>
+                        <p>
+                            Dengan tim yang berpengalaman dan berorientasi pada kepuasan klien, kami berkomitmen untuk membangun
+                            koneksi yang kuat dan menciptakan inovasi digital yang berdampak nyata.
+                        </p>
+                        <p>
+                            Kami percaya bahwa teknologi seharusnya memberi manfaat luas bagi masyarakat. Karena itu,
+                            kami terus berinovasi agar solusi yang kami berikan dapat dirasakan seluruh lapisan masyarakat di berbagai aspek kehidupan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="py-16 bg-gray-100" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <h3 class="counter text-3xl font-bold text-blue-600" data-target="3">0</h3>
+                <p class="text-gray-600 mt-2">Clients</p>
+            </div>
+            <div>
+                <h3 class="counter text-3xl font-bold text-blue-600" data-target="5">0</h3>
+                <p class="text-gray-600 mt-2">Projects</p>
+            </div>
+            <div>
+                <h3 class="counter text-3xl font-bold text-blue-600" data-target="98">0</h3>
+                <p class="text-gray-600 mt-2">Hours Of Support</p>
+            </div>
+            <div>
+                <h3 class="counter text-3xl font-bold text-blue-600" data-target="5">0</h3>
+                <p class="text-gray-600 mt-2">Workers</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    const speed = 250; // semakin kecil semakin cepat
+    let animated = false;
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = Math.ceil(target / speed);
+
+            if (count < target) {
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20);
+            } else {
+            counter.innerText = target;
+            }
+        };
+        updateCount();
+        });
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+            animateCounters();
+            animated = true;
+            observer.unobserve(entry.target);
+        }
+        });
+    }, { threshold: 0.3 }); // animasi mulai saat 30% section terlihat
+
+    observer.observe(document.querySelector("#stats"));
+    });
+    </script>
+
+    <!-- Pelayanan -->
+    <section id="services" class="py-16 md:py-20 bg-white text-gray-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative text-center mb-14" data-aos="fade-up">
+            <div class="relative w-full text-center">
+                <h2 class="absolute left-1/2 -translate-x-1/2 text-[45px] md:text-[48px] font-extrabold text-gray-400 opacity-10 uppercase tracking-wider pointer-events-none select-none whitespace-nowrap"
+                    style="top: 3%;"> SERVICE
+                </h2>
+                <h2 class="relative text-3xl md:text-4xl font-bold text-gray-700 z-10" style="padding-top: 50px;">
+                    PELAYANAN YANG KAMI BERIKAN
+                </h2>
+            </div>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                Kami menawarkan beragam layanan digital dengan fokus pada efisiensi, inovasi, dan kebutuhan anda
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg"
+                data-aos="fade-up" data-aos-delay="250">
+                <div class="text-4xl text-blue-600 mb-4"><i class="bi bi-activity"></i></div>
+                <h3 class="text-xl font-semibold mb-2">WEB Development</h3>
+                <p class="text-gray-600 text-sm">
+                    Pembuatan website responsif dan profesional, mulai dari UMKM yang ingin go digital hingga
+                    perusahaan yang butuh sistem web canggih untuk mendukung operasional bisnis.
+                </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl text-blue-600 mb-4"><i class="bi bi-broadcast"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Mobile App Development</h3>
+                <p class="text-gray-600 text-sm">
+                    Pengembangan aplikasi berbasis mobile yang mudah digunakan dan menyesuikan kebutuhan, cocok untuk pelaku usaha
+                    maupun perusahaan besar yang ingin mempercepat transformasi digitalnya.
+                </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg"
+                data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl text-blue-600 mb-4"><i class="bi bi-easel"></i></div>
+                <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                <p class="text-gray-600 text-sm">
+                    Menciptakan desain antarmuka yang mudah digunakan untuk memberi pengalaman digital yang menyenangkan
+                    bagi pengguna dan memiliki nilai estetika tersendiri pada produk digital anda
+                </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg"
+                data-aos="fade-up" data-aos-delay="250">
+                <div class="text-4xl text-blue-600 mb-4"><i class="bi bi-bounding-box-circles"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Data Analytics</h3>
+                <p class="text-gray-600 text-sm">
+                    Mengubah data yang belum terkelola menjadi informasi penting yang dapat membantu Anda membuat
+                    keputusan yang lebih baik berdasarkan informasi yang didapatkan.
+                </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl text-blue-600 mb-4"><i class="bi bi-calendar4-week"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Maintenance & Support</h3>
+                <p class="text-gray-600 text-sm">
+                    Menyediakan dukungan teknis proaktif dan reaktif untuk menjaga sistem digital Anda tetap
+                    optimal. Kami menangani pembaruan, perbaikan, dan pemantauan keamanan agar bisnis Anda berjalan
+                    lancar tanpa hambatan.
+                </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg"
+                data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl text-blue-600 mb-4"><i class="bi bi-chat-square-text"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Consulting</h3>
+                <p class="text-gray-600 text-sm">
+                    Kami menawarkan konsultasi ahli untuk menganalisis tantangan dan tujuan bisnis Anda. Kami akan
+                    merancang strategi dan solusi digital yang inovatif dan tepat sasaran, memastikan investasi Anda
+                    memberikan hasil maksimal.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="portfolio" class="py-16 bg-gray-100" data-aos="fade-up" data-aos-delay="200">
+        <style>
+            /* ---- Filter button styles: kontras & hover rapi ---- */
+            .filter-btn {
+                border: 1px solid #e5e7eb;
+                background: #fff;
+                color: #374151;
+                border-radius: 9999px;
+                padding: .5rem 1rem;
+                font-size: .875rem;
+                transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+                will-change: background-color, color;
+            }
+
+            .filter-btn:hover {
+                background: #f3f4f6;
+                color: #111827;
+            }
+
+            .filter-btn.active {
+                background: #4f46e5;
+                color: #fff;
+                border-color: #4f46e5;
+            }
+
+            .filter-btn.active:hover {
+                background: #4338ca;
+                color: #fff;
+            }
+
+            /* ---- Fade helper ---- */
+            .fade {
+                transition: opacity .3s ease;
+            }
+
+            .fade.hidden-soft {
+                opacity: 0;
+                pointer-events: none;
+            }
+        </style>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center mb-12">
+                <div class="relative w-full text-center">
+                    <h2 class="absolute left-1/2 -translate-x-1/2 text-[45px] md:text-[48px] font-extrabold text-gray-400 opacity-10 uppercase tracking-wider pointer-events-none select-none whitespace-nowrap"
+                        style="top:3%;">OUR WORKS</h2>
+                    <h2 class="relative text-3xl md:text-4xl font-bold text-gray-700 z-10" style="padding-top:50px;">
+                        PORTOFOLIO</h2>
+                </div>
+                <p class="mt-4 text-gray-600 max-w-xl mx-auto">Kumpulan karya terbaik kami dalam pengembangan software,
+                    produk digital, dan branding visual</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="filter-btn active" data-filter="all">All Product</button>
+                <button class="filter-btn" data-filter="webdev">WEB & Mobile Development</button>
+                <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+                <button class="filter-btn" data-filter="analytics">Data Analytics & Mechine Learning</button>
+                <button class="filter-btn" data-filter="consulting">Maintenance & Consulting</button>
+            </div>
+
+            <div id="portfolio-container" class="fade">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                        data-category="webdev">
+                        <img src="assets/img/SIP POSO/baner.jpg" alt="Sistem Informasi Pegawai"
+                            class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-800">Sistem Informasi Pegawai</h4>
+                            <p class="text-sm text-gray-600 flex-grow">Sistem Informasi Kepegawaian Poso dikembangkan sebagai platform terpadu untuk absensi, 
+                                pelaporan aktivitas, dan administrasi pegawai, guna meningkatkan efisiensi, transparansi, serta akuntabilitas kinerja.</p>
+                            <div class="mt-4 flex justify-between">
+                                <a href="sip.html" class="text-indigo-600 hover:underline text-sm">Details</a>
+                                <a href="assets/img/SIP POSO/baner.jpg"
+                                    class="text-indigo-600 hover:underline text-sm glightbox preview-link">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                        data-category="uiux">
+                        <img src="assets/img/UIUX/damkar.png" alt="Redesign DAMKAR" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-800">Redesign Website DAMKAR Kota Semarang</h4>
+                            <p class="text-sm text-gray-600 flex-grow">Redesign website Damkar Kota Semarang dengan tampilan modern dan responsif
+                                 untuk meningkatkan akses informasi publik serta memperkuat pelayanan masyarakat secara cepat dan transparan.</p>
+                            <div class="mt-4 flex justify-between">
+                                <a href="redesign.html" class="text-indigo-600 hover:underline text-sm">Details</a>
+                                <a href="assets/img/UIUX/damkar.png"
+                                    class="text-indigo-600 hover:underline text-sm glightbox preview-link">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                        data-category="analytics">
+                        <img src="assets/img/web-paru/webParu.png" alt="Pendeteksi Penyakik Paru-Paru" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-800">Website Pendeteksi Penyakit Paru-Paru</h4>
+                            <p class="text-sm text-gray-600 flex-grow">Penerapan data science pada website untuk membantu deteksi dini 
+                                penyakit paru-paru serta mempercepat proses penanganan.</p>
+                            <div class="mt-4 flex justify-between">
+                                <a href="deteksi.html" class="text-indigo-600 hover:underline text-sm">Details</a>
+                                <a href="assets/img/web-paru/webParu.png"
+                                    class="text-indigo-600 hover:underline text-sm glightbox preview-link">Preview</a>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                        data-category="webdev">
+                        <img src="assets/img/portfolio/web_pranala.png" alt=" Modern Website "
+                            class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-800"> Modern Website </h4>
+                            <p class="text-sm text-gray-600 flex-grow">Halaman digital yang dirancang untuk memperkuat branding perusahaan, 
+                                memudahkan akses informasi, dan meningkatkan kredibilitas di mata klien.</p>
+                            <div class="mt-4 flex justify-between">
+                                <a href="lanndingPage.html" class="text-indigo-600 hover:underline text-sm">Details</a>
+                                <a href="assets/img/portfolio/web_pranala.png"
+                                    class="text-indigo-600 hover:underline text-sm glightbox preview-link">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                        data-category="webdev">
+                        <img src="assets/img/portfolio/app-1.jpg" alt="App Mobile" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-800">App Mobile</h4>
+                            <p class="text-sm text-gray-600 flex-grow">Aplikasi responsif untuk akses layanan cepat via perangkat seluler.</p>
+                            <div class="mt-4 flex justify-between">
+                                <a href="javascript:void(0);" class="text-indigo-600 hover:underline text-sm" onclick="showAlert()">Details</a>
+                                <a href="assets/img/portfolio/app-1.jpg"
+                                    class="text-indigo-600 hover:underline text-sm glightbox preview-link">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="no-content" class="fade hidden-soft text-center text-gray-500 text-lg mt-8">
+                Produk Belum tersedia
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".filter-btn");
+            const container = document.getElementById("portfolio-container");
+            const items = document.querySelectorAll(".portfolio-item");
+            const noContent = document.getElementById("no-content");
+
+            const setActive = (btn) => {
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+            };
+
+            const fadeOut = (el) => {
+                el.classList.add("hidden-soft");
+            };
+            const fadeIn = (el) => {
+                el.classList.remove("hidden-soft");
+            };
+
+            const applyFilter = (filter) => {
+                // Fade out yang sedang tampil
+                fadeOut(container);
+                fadeOut(noContent);
+
+                setTimeout(() => {
+                    let visible = 0;
+
+                    items.forEach(item => {
+                        const show = (filter === "all") || (item.dataset.category === filter);
+                        item.classList.toggle("hidden", !show);
+                        if (show) visible++;
+                    });
+
+                    //const emptyState = (filter === "analytics" || filter === "consulting" || visible === 0); memanage tombol navigasi portofolio
+                    const emptyState = (filter === "consulting" || visible === 0);
+
+                    if (emptyState) {
+                        container.classList.add("hidden");
+                        noContent.classList.remove("hidden");
+                        // Fade in pesan kosong
+                        requestAnimationFrame(() => fadeIn(noContent));
+                    } else {
+                        noContent.classList.add("hidden");
+                        container.classList.remove("hidden");
+                        // Fade in grid
+                        requestAnimationFrame(() => fadeIn(container));
+                    }
+                }, 200); // durasi fade-out sebelum swap konten
+            };
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    setActive(btn);
+                    applyFilter(btn.dataset.filter);
+                });
+            });
+        });
+    </script>
+
+    <!-- Kontak -->
+    <section id="contact" class="py-16 md:py-20 bg-white text-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative text-center mb-14" data-aos="fade-up">
+                    <div class="relative w-full text-center">
+                        <h2 class="absolute left-1/2 -translate-x-1/2 text-[45px] md:text-[48px] font-extrabold text-gray-400 opacity-10 uppercase tracking-wider pointer-events-none select-none whitespace-nowrap"
+                            style="top: 3%;"> CONTACT US
+                        </h2>
+                        <h2 class="relative text-3xl md:text-4xl font-bold text-gray-700 z-10" style="padding-top: 50px;">
+                            HUBUNGI KAMI
+                        </h2>
+                    </div>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                        Selalu Terhubung Dengan Kami
+                    </p>
+                </div>
+            </div>
+
+            <script>
+                AOS.init({
+                    duration: 1500, // Durasi animasi dalam milidetik, membuat transisi lebih lambat
+                    once: true, // Animasi hanya berjalan satu kali saat elemen pertama kali muncul
+                    easing: 'ease-in-out' // Mengatur kecepatan animasi untuk transisi yang lebih halus
+                });
+            </script>
+
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="250">
+                <div class="bg-white p-6 shadow rounded-lg space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-100 text-blue-400 p-3 rounded-full">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Alamat</h3>
+                            <p class="text-gray-600">JL. Lamper Mijen No 350, Semarang, Jawa Tengah</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-100 text-blue-400 p-3 rounded-full">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Kontak</h3>
+                            <p class="text-gray-600">+62 823 4657 9034</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-100 text-blue-400 p-3 rounded-full">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Email</h3>
+                            <p class="text-gray-600">pt.pranalatrustmedia@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="w-full h-64 rounded-lg overflow-hidden border">
+                        <iframe class="w-full h-full"
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3960.0471058889516!2d110.44194399999999!3d-7.003736000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDAnMTMuNSJTIDExMMKwMjYnMzEuMCJF!5e0!3m2!1sen!2sid!4v1753627913671!5m2!1sen!2sid"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 shadow rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">FAQ (Pertanyaan yang Sering Diajukan)</h3>
+                    <div id="faq-container" class="space-y-4">
+
+                        <div class="faq-item rounded-lg overflow-hidden border border-gray-200">
+                            <div class="faq-question flex justify-between items-center p-4 bg-gray-100 cursor-pointer">
+                                <span class="font-semibold text-gray-700">Apa saja layanan yang ditawarkan?</span>
+                                <span class="toggle-icon text-lg text-gray-500">+</span>
+                            </div>
+                            <div
+                                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white text-gray-600 border-t border-gray-200">
+                                <div class="p-4">
+                                    Kami menawarkan jasa pengembangan website, aplikasi mobile, desain UI/UX, analisis
+                                    data,
+                                    dan layanan konsultasi IT.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item rounded-lg overflow-hidden border border-gray-200">
+                            <div class="faq-question flex justify-between items-center p-4 bg-gray-100 cursor-pointer">
+                                <span class="font-semibold text-gray-700">Apakah harga pembuatan website dan
+                                    aplikasinya mahal?</span>
+                                <span class="toggle-icon text-lg text-gray-500">+</span>
+                            </div>
+                            <div
+                                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white text-gray-600 border-t border-gray-200">
+                                <div class="p-4">
+                                    Tenang, harga yang kami tawarkan tetap bersaing dengan penyedia jasa lain. Bedanya,
+                                    kami memastikan hasil
+                                    yang anda dapatkan benar-benar sepadan bahkan lebih bernilai dibanding biaya yang
+                                    dikeluarkan.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item rounded-lg overflow-hidden border border-gray-200">
+                            <div class="faq-question flex justify-between items-center p-4 bg-gray-100 cursor-pointer">
+                                <span class="font-semibold text-gray-700">Bagaimana cara memulai proyek/melakukan
+                                    konsultasi dengan
+                                    kami?</span>
+                                <span class="toggle-icon text-lg text-gray-500">+</span>
+                            </div>
+                            <div
+                                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white text-gray-600 border-t border-gray-200">
+                                <div class="p-4">
+                                    Anda dapat memulai dengan menghubungi kami melalui telepon atau email untuk
+                                    konsultasi awal. Kami akan mendengarkan kebutuhan Anda dan menawarkan solusi
+                                    terbaik.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item rounded-lg overflow-hidden border border-gray-200">
+                            <div class="faq-question flex justify-between items-center p-4 bg-gray-100 cursor-pointer">
+                                <span class="font-semibold text-gray-700">Berapa lama waktu yang dibutuhkan untuk
+                                    sebuah proyek?</span>
+                                <span class="toggle-icon text-lg text-gray-500">+</span>
+                            </div>
+                            <div
+                                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white text-gray-600 border-t border-gray-200">
+                                <div class="p-4">
+                                    Durasi proyek sangat bervariasi tergantung pada kompleksitas dan cakupan
+                                    pekerjaan. Kami akan memberikan estimasi waktu yang jelas setelah diskusi awal.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item rounded-lg overflow-hidden border border-gray-200">
+                            <div class="faq-question flex justify-between items-center p-4 bg-gray-100 cursor-pointer">
+                                <span class="font-semibold text-gray-700">Apakah Anda menyediakan layanan
+                                    pemeliharaan?</span>
+                                <span class="toggle-icon text-lg text-gray-500">+</span>
+                            </div>
+                            <div
+                                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white text-gray-600 border-t border-gray-200">
+                                <div class="p-4">
+                                    Ya, kami menyediakan layanan pemeliharaan dan dukungan berkelanjutan untuk
+                                    memastikan sistem Anda berfungsi optimal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.querySelectorAll('.faq-question').forEach(item => {
+                        item.addEventListener('click', () => {
+                            const parent = item.parentElement;
+                            const answer = parent.querySelector('.faq-answer');
+                            const icon = parent.querySelector('.toggle-icon');
+
+                            document.querySelectorAll('.faq-answer').forEach(el => {
+                                if (el !== answer) {
+                                    el.style.maxHeight = null;
+                                    el.parentElement.querySelector('.toggle-icon').textContent = '+';
+                                }
+                            });
+
+                            if (answer.style.maxHeight) {
+                                answer.style.maxHeight = null;
+                                icon.textContent = '-';
+                            } else {
+                                answer.style.maxHeight = answer.scrollHeight + "px";
+                                icon.textContent = '+';
+                            }
+                        });
+                    });
+                </script>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-10 mt-20">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="mb-2 text-lg font-bold mb-2">Pranala Trust Media</h2>
+                    <address class="not-italic text-justify text-gray-400 leading-relaxed text-sm">
+                        <p class="mb-3">JL. Lamper Mijen No 350</p>
+                        <p class="mb-3">Semarang, Jawa Tengah</p>
+                        <p class="mb-3"><strong>Phone:</strong> +62 823 4657 9034</p>
+                        <p><strong>Email:</strong> pt.pranalatrustmedia@gmail.com</p>
+                    </address>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-5">Tautan Berguna</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#home"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300">Home</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#tentang"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300">About
+                                us</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#services"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300">Services</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Terms of
+                                service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-5">Layanan Kami</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Web & Mobile Development</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">UI/UX Design</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Data Analytics</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-blue-400 text-xs mr-2"></i>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Maintenance & Consulting</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-5">Ikuti Kami</h4>
+                    <p class="not-italic text-gray-400 leading-relaxed space-y-2">
+                        Dapatkan informasi terbaru seputar dunia teknologi, tips & trik, dan proyek-proyek terbaru kami
+                        langsung di media sosial.
+                    </p>
+                    <br>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-9 h-9 flex items-center justify-center border border-gray-500 rounded-full text-gray-400 hover:text-blue-400 transition duration-300 hover:border-blue-400">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pranalatrustmedia/?utm_source=ig_web_button_share_sheet"
+                            target="_blank"
+                            class="w-9 h-9 flex items-center justify-center border border-gray-500 rounded-full text-gray-400 hover:text-blue-400 transition duration-300 hover:border-blue-400">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 flex items-center justify-center border border-gray-500 rounded-full text-gray-400 hover:text-blue-400 transition duration-300 hover:border-blue-400">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400 text-sm">
+                © 2025 Pranala Trust Media. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Durasi animasi dalam ms
+            once: true, // Animasi hanya berjalan satu kali saat pertama kali discroll
+        });
+    </script>
+    
+    <div id="modern-alert" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50 invisible opacity-0 transition-opacity duration-300">
+        <div class="relative bg-white rounded-lg shadow-xl max-w-sm w-full p-6 text-center transform scale-95 transition-all duration-300">
+            <div class="text-yellow-500 mb-4 mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.802-1.396 
+                        2.548-2.932l-1.388-7.77C18.498 6.07 17.13 5 
+                        15.688 5H8.312C6.87 5 5.502 6.07 
+                        5.234 7.298l-1.388 7.77C3.41 
+                        17.604 4.672 19 6.21 19z" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Mohon Maaf</h3>
+            <p class="text-gray-600">Konten ini sedang dalam perbaikan dan belum dapat diakses saat ini.</p>
+            <button onclick="hideAlert()" class="mt-6 px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-200">
+                Tutup
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        function showAlert() {
+            const alertBox = document.getElementById('modern-alert');
+            const contentBox = alertBox.querySelector('.relative');
+            alertBox.classList.remove('invisible', 'opacity-0');
+            alertBox.classList.add('visible', 'opacity-100');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+        }
+
+        function hideAlert() {
+            const alertBox = document.getElementById('modern-alert');
+            const contentBox = alertBox.querySelector('.relative');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+            setTimeout(() => {
+                alertBox.classList.remove('visible', 'opacity-100');
+                alertBox.classList.add('invisible', 'opacity-0');
+            }, 300);
+        }
+
+        // Tutup modal jika klik area luar box
+        document.getElementById('modern-alert').addEventListener('click', (e) => {
+            if (e.target.id === 'modern-alert') {
+                hideAlert();
+            }
+        });
+    </script>
+</body>
+
+</html>
